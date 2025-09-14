@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+/* Custom styles with modern theme approach */
+@theme inline {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+/* Apply dark mode manually since we're using class-based dark mode */
+:root, :root:not(.dark) {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+}
+
+/* Apply background to body and html */
+html, body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  min-height: 100vh;
+}
+
+/* Custom component classes */
+.btn-primary {
+  background: hsl(var(--color-primary-600));
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background: hsl(var(--color-primary-700));
+}
+
+.btn-secondary {
+  background: hsl(220 13% 91%);
+  color: hsl(224 10% 30%);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background: hsl(220 13% 81%);
+}
+
+.dark .btn-secondary {
+  background: hsl(215 28% 17%);
+  color: hsl(210 40% 98%);
+}
+
+.dark .btn-secondary:hover {
+  background: hsl(215 28% 27%);
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid hsl(220 13% 91%);
+  border-radius: 0.375rem;
+  outline: none;
+}
+
+.input-field:focus {
+  ring: 2px;
+  ring-color: hsl(var(--color-primary-500));
+  border-color: transparent;
+}
+
+.dark .input-field {
+  background: hsl(215 28% 17%);
+  border-color: hsl(215 28% 27%);
+  color: hsl(210 40% 98%);
+}
+
+.panel {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+}
+
+.dark .panel {
+  background: hsl(215 28% 17%);
+}
+
+/* Custom scrollbar for chat */
+.chat-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(220 13% 91%);
+  border-radius: 3px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(220 13% 81%);
+}
+
+.dark .chat-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(215 28% 27%);
+}
+
+.dark .chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(215 28% 37%);
+}
+
+/* Additional utility classes for background colors */
+.bg-gray-50 {
+  background: hsl(220 14% 96%);
+}
+
+.dark .bg-gray-50 {
+  background: hsl(220 14% 16%);
+}
+
+.bg-gray-900 {
+  background: hsl(222 84% 5%);
+}
+
+.dark .bg-gray-900 {
+  background: hsl(222 84% 15%);
+}
+
+.bg-white {
+  background: white;
+}
+
+.dark .bg-white {
+  background: hsl(215 28% 17%);
+}
+
+.bg-gray-800 {
+  background: hsl(215 28% 17%);
+}
+
+.dark .bg-gray-800 {
+  background: hsl(215 28% 27%);
+}
+
+.text-gray-900 {
+  color: hsl(224 10% 10%);
+}
+
+.dark .text-gray-900 {
+  color: hsl(210 40% 98%);
+}
+
+.text-white {
+  color: white;
+}
+
+.dark .text-white {
+  color: hsl(210 40% 98%);
+}
+
+.border-gray-200 {
+  border-color: hsl(220 13% 91%);
+}
+
+.dark .border-gray-200 {
+  border-color: hsl(215 28% 27%);
+}
+
+.border-gray-700 {
+  border-color: hsl(215 28% 27%);
+}
+
+.dark .border-gray-700 {
+  border-color: hsl(215 28% 37%);
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.dark .shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode styles for Model Selection */
+.dark .model-option {
+  background: hsl(215 28% 17%) !important;
+  border-color: hsl(215 28% 27%) !important;
+  color: hsl(210 40% 98%) !important;
+}
+
+.dark .model-option:hover {
+  background: hsl(215 28% 22%) !important;
+}
+
+.dark .model-option.selected {
+  background: hsl(216 80% 28% / 0.3) !important;
+  border-color: hsl(217 90% 45%) !important;
+}
+
+/* Dark mode styles for Chat Output */
+.dark .chat-message-user {
+  background: hsl(216 80% 28% / 0.4) !important;
+}
+
+.dark .chat-message-assistant {
+  background: hsl(215 28% 22%) !important;
+}
+
+.dark .chat-text {
+  color: hsl(210 40% 98%) !important;
+}
+
+/* Additional utility classes */
+.text-black {
+  color: hsl(0 0% 0%);
+}
+
+.dark .text-black {
+  color: hsl(210 40% 98%) !important;
+}
+
+.bg-white {
+  background: white;
+}
+
+.dark .bg-white {
+  background: hsl(215 28% 17%);
+}
